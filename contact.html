@@ -1,0 +1,74 @@
+<h1 style="text-align:center;">Contact Me</h1>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="skills.html">Skills</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<div class="container">
+
+<form onsubmit="showMessage(event)">
+    <div class="box">
+        <input type="text" placeholder="Name" required style="width:100%;">
+    </div>
+
+    <div class="box">
+        <input type="email" placeholder="Email" required style="width:100%;">
+    </div>
+
+    <div class="box">
+        <textarea placeholder="Message" required style="width:100%;"></textarea>
+    </div>
+
+    <button type="submit">Send</button>
+</form>
+
+<p id="success" style="color:green;"></p>
+
+</div>
+
+<script>
+function showMessage(event) {
+    event.preventDefault();
+    document.getElementById("success").innerText = "Message Saved Successfully!";
+}
+</script>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: black;
+    padding: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.container {
+    width: 500px;
+    margin: 40px auto;
+}
+
+.box {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 8px 15px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+</style>
