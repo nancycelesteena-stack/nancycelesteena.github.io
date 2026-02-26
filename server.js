@@ -41,12 +41,17 @@ app.post("/contact", (req, res) => {
 
 const PORT = process.env.PORT || 10000;
 
-app.listen(PORT, () => {
-  console.log("Server running on port " + PORT);
+
+app.listen(process.env.PORT, () => {
+  console.log("Server is running on Render");
 });
 const path = require("path");
 
 app.use(express.static(path.join(__dirname, "../frontend")));
+app.use(express.static("frontend"));
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/frontend/index.html");
+});
 
 
 password:""
