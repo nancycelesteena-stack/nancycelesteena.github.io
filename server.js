@@ -8,10 +8,10 @@ app.use(express.json());
 
 // Database connection
 const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "nancy",
-  database: "portfolio_db"
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password:process.env.DB_nancy,
+  database: process.env.DB_NAME
 });
 
 db.connect((err) => {
@@ -39,7 +39,7 @@ app.post("/contact", (req, res) => {
   });
 });
 
-const PORT = process.env.PORT || 10000;
+const PORT = process.env.PORT || 5000;
 
 
 app.listen(process.env.PORT, () => {
